@@ -1,5 +1,4 @@
 import os
-os.environ["HF_TOKEN"] = "REMOVED"
 os.environ["PYTORCH_SDP_DISABLE_FLASH_ATTN"] = "1"
 os.environ["PYTORCH_ENABLE_SDPA"] = "0"
 

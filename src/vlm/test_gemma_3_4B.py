@@ -1,5 +1,4 @@
 import os
-os.environ["HF_TOKEN"] = "REMOVED"
 
 from transformers import AutoProcessor, Gemma3ForConditionalGeneration
 import torch
