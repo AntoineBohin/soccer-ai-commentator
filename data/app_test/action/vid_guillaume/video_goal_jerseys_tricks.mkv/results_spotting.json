@@ -1,0 +1,19 @@
+{
+    "UrlLocal": "vid_guillaume/video_goal_jerseys_tricks.mkv",
+    "predictions": [
+        {
+            "gameTime": "1 - 00:07",
+            "label": "Clearance",
+            "position": "7767",
+            "half": "1",
+            "confidence": "0.28461602330207825"
+        },
+        {
+            "gameTime": "1 - 00:19",
+            "label": "Clearance",
+            "position": "19033",
+            "half": "1",
+            "confidence": "0.250098317861557"
+        }
+    ]
+}

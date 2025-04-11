@@ -1,0 +1,96 @@
+{
+    "UrlLocal": "vid_guillaume/video_real_game.mkv",
+    "predictions": [
+        {
+            "gameTime": "1 - 00:00",
+            "label": "Goal",
+            "position": "475",
+            "half": "1",
+            "confidence": "0.44953078031539917"
+        },
+        {
+            "gameTime": "1 - 00:00",
+            "label": "Offside",
+            "position": "825",
+            "half": "1",
+            "confidence": "0.20948001742362976"
+        },
+        {
+            "gameTime": "1 - 00:01",
+            "label": "Goal",
+            "position": "1475",
+            "half": "1",
+            "confidence": "0.31224122643470764"
+        },
+        {
+            "gameTime": "1 - 00:03",
+            "label": "Offside",
+            "position": "3275",
+            "half": "1",
+            "confidence": "0.20302464067935944"
+        },
+        {
+            "gameTime": "1 - 00:04",
+            "label": "Offside",
+            "position": "4650",
+            "half": "1",
+            "confidence": "0.25204411149024963"
+        },
+        {
+            "gameTime": "1 - 00:05",
+            "label": "Goal",
+            "position": "5325",
+            "half": "1",
+            "confidence": "0.3128272294998169"
+        },
+        {
+            "gameTime": "1 - 00:06",
+            "label": "Goal",
+            "position": "6925",
+            "half": "1",
+            "confidence": "0.21765923500061035"
+        },
+        {
+            "gameTime": "1 - 00:09",
+            "label": "Ball out of play",
+            "position": "9050",
+            "half": "1",
+            "confidence": "0.20006436109542847"
+        },
+        {
+            "gameTime": "1 - 00:12",
+            "label": "Goal",
+            "position": "12200",
+            "half": "1",
+            "confidence": "0.20133891701698303"
+        },
+        {
+            "gameTime": "1 - 00:12",
+            "label": "Offside",
+            "position": "12975",
+            "half": "1",
+            "confidence": "0.24383549392223358"
+        },
+        {
+            "gameTime": "1 - 00:13",
+            "label": "Goal",
+            "position": "13925",
+            "half": "1",
+            "confidence": "0.22382991015911102"
+        },
+        {
+            "gameTime": "1 - 00:14",
+            "label": "Goal",
+            "position": "14700",
+            "half": "1",
+            "confidence": "0.20184369385242462"
+        },
+        {
+            "gameTime": "1 - 00:15",
+            "label": "Ball out of play",
+            "position": "15675",
+            "half": "1",
+            "confidence": "0.2180986851453781"
+        }
+    ]
+}
