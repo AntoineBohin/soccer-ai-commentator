@@ -1,0 +1,4 @@
+ultralytics
+gdown
+supervision
+scikit-learn
