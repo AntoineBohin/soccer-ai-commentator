@@ -1,0 +1,117 @@
+{
+    "image_size": [
+        1280,
+        736
+    ],
+    "batch_size": 4,
+    "base_lr": 0.0003,
+    "min_base_lr": 2.9999999999999997e-06,
+    "use_ema": true,
+    "ema_decay": 0.9995,
+    "frame_stack_size": 15,
+    "frame_stack_step": 2,
+    "max_targets_window_size": 15,
+    "train_epoch_size": 36000,
+    "train_sampling_weights": {
+        "action_window_size": 9,
+        "action_prob": 0.5,
+        "action_weights": {
+            "Penalty": 0.244,
+            "Kick-off": 0.197,
+            "Goal": 0.08,
+            "Substitution": 0.06,
+            "Offside": 0.069,
+            "Shots on target": 0.028,
+            "Shots off target": 0.03,
+            "Clearance": 0.041,
+            "Ball out of play": 0.011,
+            "Throw-in": 0.015,
+            "Foul": 0.017,
+            "Indirect free-kick": 0.028,
+            "Direct free-kick": 0.077,
+            "Corner": 0.035,
+            "Card": 0.07
+        }
+    },
+    "metric_accuracy_threshold": 0.5,
+    "num_nvdec_workers": 3,
+    "num_opencv_workers": 1,
+    "num_epochs": [
+        4,
+        20
+    ],
+    "stages": [
+        "warmup",
+        "train"
+    ],
+    "argus_params": {
+        "nn_module": [
+            "multidim_stacker",
+            {
+                "model_name": "tf_efficientnetv2_b0",
+                "num_classes": 15,
+                "num_frames": 15,
+                "stack_size": 3,
+                "index_2d_features": 4,
+                "pretrained": true,
+                "num_3d_blocks": 4,
+                "num_3d_features": 192,
+                "expansion_3d_ratio": 3,
+                "se_reduce_3d_ratio": 24,
+                "num_3d_stack_proj": 256,
+                "drop_rate": 0.2,
+                "drop_path_rate": 0.2,
+                "act_layer": "silu"
+            }
+        ],
+        "loss": [
+            "focal_loss",
+            {
+                "alpha": -1.0,
+                "gamma": 1.2,
+                "reduction": "mean"
+            }
+        ],
+        "optimizer": [
+            "AdamW",
+            {
+                "lr": 0.0003
+            }
+        ],
+        "device": [
+            "cuda:0"
+        ],
+        "image_size": [
+            1280,
+            736
+        ],
+        "frame_stack_size": 15,
+        "frame_stack_step": 2,
+        "amp": true,
+        "iter_size": 1,
+        "frames_processor": [
+            "pad_normalize",
+            {
+                "size": [
+                    1280,
+                    736
+                ],
+                "pad_mode": "constant",
+                "fill_value": 0
+            }
+        ]
+    },
+    "frame_index_shaker": {
+        "shifts": [
+            -1,
+            0,
+            1
+        ],
+        "weights": [
+            0.2,
+            0.6,
+            0.2
+        ],
+        "prob": 0.25
+    }
+}
