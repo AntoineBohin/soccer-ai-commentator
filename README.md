@@ -1,9 +1,17 @@
 # AI-Generation of Soccer Highlights and Audio Commentaries
 
-This project aimed to build an end-to-end pipeline for generating **natural language audio commentary** from raw soccer match videos. Leveraging state-of-the-art models in **Action Spotting**, **Vision-Language Modeling (VLM)**, **Large Language Models (LLM)** and **Text-to-Speech (TTS)**, our goal was to automatically detect key soccer actions, describe them with engaging and temporally aligned commentary, and synthesize spoken audio.
+This project presents an end-to-end AI pipeline for automatically generating natural audio commentary from raw soccer match videos. Combining the latest advances in Computer Vision, Vision-Language Modeling (VLM), Large Language Models (LLM), and Text-to-Speech (TTS), the pipeline detects key actions, describes them chronologically, reformulates them into sports commentary, and synthesizes spoken audio.
 
-## Solution Overview
-![Project Pipeline][img/pipeline.png]
+## Context
+
+Generating automated, high-quality soccer commentary from full-match videos is a highly relevant challenge with real-world applications, including YouTube highlights, automated post-match reporting, and textual recaps for sports media like L’Équipe. However, current multimodal AI models face limitations that prevent end-to-end solutions: video inputs must be drastically reduced due to token and memory constraints, and existing Vision-Language Models (VLMs) lack fine temporal understanding, narrative coherence, and emotional tone.
+
+To address this, we designed a modular and scalable pipeline combining vision, language, and audio generation — tailored to work under hardware constraints, yet easily upgradable as models evolve. Our approach breaks down the problem into specialized steps, allowing for flexible customization (e.g., prompts, FPS, resolution), rapid model replacement, and potential adaptation to other sports like basketball or e-sports.
+This project demonstrates the feasibility of such a system, offering a valuable foundation for future research and product development in sports analytics, media production, and AI-generated storytelling.
+
+## Project Overview
+The pipeline consists of 5 main components, described below.
+![Project Pipeline][./img/pipeline.png]
 
 ### Soccer Data
 We used **SoccerNet v2**, a public benchmark dataset for soccer video understanding.
