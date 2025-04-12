@@ -45,10 +45,28 @@ Code for tracking can be found in `src/player_tracking/` (modular pipeline adapt
 
 This approach enables the VLM to focus attention on relevant actors and motions, improving both action classification and description generation.
 
-<video src="https://github.com/user-attachments/assets/39a5404e-2ff0-400b-b9f7-7891efc3f97d" controls width="40%">
-
+<video src="https://github.com/user-attachments/assets/39a5404e-2ff0-400b-b9f7-7891efc3f97d" controls width="40%"></video>
 
 ### 3. Action Description (VLM)
+To describe soccer actions from video clips, we tested and deployed several open-source Vision-Language Models (VLMs) locally — without relying on external APIs.
+Given the GPU memory constraints (max 24 GB VRAM), we designed a lightweight inference strategy:
+- Compact open-source models only
+- Use of FlashAttention and float16 inference to optimize memory and speed
+- Extensive benchmark of VLMs on football action clips (Phi-3.5 Vision, SmolVLM 2.2B, Apollo-7B, PaliGemma-3B, InternVL2.5, IBM Granite)
+	→ Winner: QWEN2.5-VL-7B for its overall performance and low hallucination rate
+
+Due to strict token and memory limits, we optimized video input as follows:
+- 10s clips, downsampled to 4 fps (preserves motion)
+- Resolution reduced to match GPU memory limits (c.220p with ours), while keeping player & ball tracking overlays for context
+- Best results came from clips with varied viewpoints and player close-ups
+
+Well-crafted prompts were critical to VLM performance. Ours included:
+- Action label (from Action Spotting)
+- Frame count and timestamps
+- Request to describe the clip by time chunks (e.g., 1s blocks)
+
+This led to temporally aligned outputs suitable for rephrasing and TTS. Complex instructions (e.g., asking for audio-ready commentary directly) reduced reliability.
+Code for VLM can be found in `src/vlm/vlm_utils.py` 
 
 ### 4. Textual Commentary (LLM)
 
