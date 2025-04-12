@@ -105,4 +105,4 @@ You can test Zonos and tune voice parameters on their playground: [https://githu
 - Ilyess Doragh (CentraleSupélec) ilyess.doragh@student-cs.fr
 - Mathieu Dujardin (CentraleSupélec) mathieu.dujardin@student-cs.fr
 - Logan Renaud (CentraleSupélec / MVA) logan.renaud@student-cs.fr
-Project proposed by Sia Partners (Axel Darmouni and Guillaume Orset-Prelet)
+- Project proposed by Sia Partners (Axel Darmouni and Guillaume Orset-Prelet)
