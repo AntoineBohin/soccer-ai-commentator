@@ -10,7 +10,14 @@ To address this, we designed a modular and scalable pipeline combining vision, l
 
 You can watch the full demo of the solution by downloading Final_Demo.mp4
 
-| <video src="https://github.com/user-attachments/assets/9ef1e9a8-7c0a-42a7-8ea9-f4ccabebc151" controls width="100%"></video> | <video src="https://github.com/user-attachments/assets/5643d22c-89cb-4ca2-a31a-4694f95e1d92" controls width="100%"></video> |
+<video src="https://github.com/user-attachments/assets/9ef1e9a8-7c0a-42a7-8ea9-f4ccabebc151" controls width="100%"></video> <video src="https://github.com/user-attachments/assets/5643d22c-89cb-4ca2-a31a-4694f95e1d92" controls width="100%"></video>
+
+<p align="center">
+  <div style="display: flex; justify-content: center; gap: 20px;">
+    <video src="https://github.com/user-attachments/assets/9ef1e9a8-7c0a-42a7-8ea9-f4ccabebc151" controls width="45%"></video>
+    <video src="https://github.com/user-attachments/assets/5643d22c-89cb-4ca2-a31a-4694f95e1d92" controls width="45%"></video>
+  </div>
+</p>
 
 ## Project Overview
 The pipeline consists of 5 main components, described below. \\
