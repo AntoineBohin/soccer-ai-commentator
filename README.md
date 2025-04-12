@@ -3,7 +3,7 @@
 This project aimed to build an end-to-end pipeline for generating **natural language audio commentary** from raw soccer match videos. Leveraging state-of-the-art models in **Action Spotting**, **Vision-Language Modeling (VLM)**, **Large Language Models (LLM)** and **Text-to-Speech (TTS)**, our goal was to automatically detect key soccer actions, describe them with engaging and temporally aligned commentary, and synthesize spoken audio.
 
 ## Solution Overview
-![Project Pipeline][./img/pipeline.png]
+![Project Pipeline][img/pipeline.png]
 
 ### Soccer Data
 We used **SoccerNet v2**, a public benchmark dataset for soccer video understanding.
