@@ -11,7 +11,7 @@ This project demonstrates the feasibility of such a system, offering a valuable 
 
 ## Project Overview
 The pipeline consists of 5 main components, described below.
-![Project Pipeline][./img/pipeline.png]
+![Project Pipeline](./img/pipeline.png)
 
 ### Soccer Data
 We used **SoccerNet v2**, a public benchmark dataset for soccer video understanding.
