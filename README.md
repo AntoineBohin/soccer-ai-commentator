@@ -1,1 +1,1 @@
-# soccer-ai-commentator
+# AI-Generation of Soccer Highlights with Audio Commentaries
