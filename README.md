@@ -66,11 +66,25 @@ Well-crafted prompts were critical to VLM performance. Ours included:
 - Request to describe the clip by time chunks (e.g., 1s blocks)
 
 This led to temporally aligned outputs suitable for rephrasing and TTS. Complex instructions (e.g., asking for audio-ready commentary directly) reduced reliability.
-Code for VLM can be found in `src/vlm/vlm_utils.py` 
+Code for VLM can be found in `src/vlm/vlm_utils.py`
 
 ### 4. Textual Commentary (LLM)
+After generating raw descriptions with the VLM, we use a Large Language Model (LLM) to rephrase them into fluent, expressive sport commentaries. Since the LLM does not process videos directly, we can afford to use larger models optimized for text generation. Among various tested models (GPT-2, Mistral-7B, Qwen2.5-7B, Gemma 3-4B), we selected Gemma 3-4B Instruct for its strong balance between creativity and reliability (2% hallucination rate).
+The LLM receives a structured prompt that helps:
+- Add emotion and storytelling to the descriptions,
+- Reduce hallucinations from the VLM,
+- Maintain a short, coherent summary (~30 words).
 
 ### 5. Audio Commentary (TTS)
+The final step of our pipeline transforms textual descriptions into natural, expressive audio commentary, simulating a real sports broadcast experience.
+We use Zonos, a Text-to-Speech model from the Coqui-TTS framework, selected for its open-source nature, fast inference, and advanced control over style and emotion. It allows us to specify voice tone parameters dynamically, making it especially suited for sports applications.
+Key features of our setup:
+- Voice cloning: We use real audio samples of Peter Drury, a renowned sports commentator, to synthesize voice with high fidelity and recognizable tone.
+- Emotion embeddings: We encode emotions like happiness, excitement, or neutrality as a vector and pass it to the TTS model to modulate the speaking style.
+- Context-aware style: Two different voice inputs and sets of emotion parameters are used based on the action type: High-emotion voice for impactful actions (e.g. goals, penalties) vs. Neutral tone for routine actions (e.g. throw-ins, substitutions).
+- Low inference time: The full generation process is typically under 10 seconds per clip on a standard GPU.
+You can test Zonos and tune voice parameters on their playground: [https://github.com/roboflow/sports/tree/main](https://playground.zyphra.com/audio)
+
 
 ## Quick Setup and Start
 
