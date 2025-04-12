@@ -27,9 +27,9 @@ The model works in three stages:
 - Classification: A linear layer classifies each timestep into one of the SoccerNet action classes.
 
 We reused and refactored the original implementation to adapt it to our project structure:
-- Model architecture and training logic: available under src/models/ and src/training/.
-- Training and inference scripts: located in scripts/, with clear CLI options for configuration.
-- Model weights available in data/action/
+- Model architecture and training logic: available under `src/`.
+- Training and inference scripts: located in `scripts/`, with clear CLI options for configuration.
+- Model weights available in `data/action/`
 - The model is fully compatible with SoccerNet v2 and can be retrained or used for direct inference.
 
 
