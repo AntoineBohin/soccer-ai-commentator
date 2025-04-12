@@ -8,16 +8,8 @@ Generating automated, high-quality soccer commentary from full-match videos is a
 
 To address this, we designed a modular and scalable pipeline combining vision, language, and audio generation — tailored to work under hardware constraints, yet easily upgradable as models evolve. Our approach breaks down the problem into specialized steps, allowing for flexible customization (e.g., prompts, FPS, resolution), rapid model replacement, and potential adaptation to other sports like basketball or e-sports. This project demonstrates the feasibility of such a system, offering a valuable foundation for future research and product development in sports analytics, media production, and AI-generated storytelling.
 
-You can watch the full demo of the solution by downloading Final_Demo.mp4
-
 <video src="https://github.com/user-attachments/assets/9ef1e9a8-7c0a-42a7-8ea9-f4ccabebc151" controls width="100%"></video> <video src="https://github.com/user-attachments/assets/5643d22c-89cb-4ca2-a31a-4694f95e1d92" controls width="100%"></video>
-
-<p align="center">
-  <div style="display: flex; justify-content: center; gap: 20px;">
-    <video src="https://github.com/user-attachments/assets/9ef1e9a8-7c0a-42a7-8ea9-f4ccabebc151" controls width="45%"></video>
-    <video src="https://github.com/user-attachments/assets/5643d22c-89cb-4ca2-a31a-4694f95e1d92" controls width="45%"></video>
-  </div>
-</p>
+You can watch the full demo of the solution by downloading Final_Demo.mp4
 
 ## Project Overview
 The pipeline consists of 5 main components, described below. \\
@@ -27,6 +19,19 @@ The pipeline consists of 5 main components, described below. \\
 We used **SoccerNet v2**, a public benchmark dataset for soccer video understanding.
 
 ### 1. Action Spotting
+We selected an open-source model from the 2023 SoccerNet Action Spotting Challenge, originally developed by [Ruslan Baikulov (original github)](https://github.com/lRomul/ball-action-spotting). This model (that has become the standard baseline for SoccerNet 2024 Action Spotting challenge) belongs to a class of hybrid and lightweight Action Spotting architectures, offering a solid compromise between performance, robustness, and efficiency. Its design makes it particularly well-suited for deployment on modest GPUs, a crucial criterion for scalable and accessible solutions.
+
+The model works in three stages:
+- Visual Encoding: Consecutive grayscale frames are stacked and passed through a 2D CNN backbone (EfficientNetV2-B0) to extract spatial features.
+- Temporal Modeling: A lightweight 3D CNN merges motion cues across time to capture action dynamics.
+- Classification: A linear layer classifies each timestep into one of the SoccerNet action classes.
+
+We reused and refactored the original implementation to adapt it to our project structure:
+- Model architecture and training logic: available under src/models/ and src/training/.
+- Training and inference scripts: located in scripts/, with clear CLI options for configuration.
+- Model weights available in data/action/
+- The model is fully compatible with SoccerNet v2 and can be retrained or used for direct inference.
+
 
 ### 2. Player Tracking
 
