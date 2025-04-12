@@ -32,8 +32,21 @@ We reused and refactored the original implementation to adapt it to our project 
 - Model weights available in `data/action/`
 - The model is fully compatible with SoccerNet v2 and can be retrained or used for direct inference.
 
+### 2. Player & Ball Tracking
+To improve visual understanding and context for downstream models, we implemented a lightweight two-step tracking system, adapted from the [Roboflow Sports GitHub repository](https://github.com/roboflow/sports/tree/main).
+1. Step 1 - Detection: We use the YOLOv8 object detection model to detect players, referees, and the ball in each frame with high speed and precision.
+2. Step 2 - Tracking: Detections are linked across frames using ByteTrack, a high-performance multi-object tracking algorithm based on IoU matching and a two-stage association of low and high confidence detections.
 
-### 2. Player Tracking
+This combination allows us to:
+- Persistently track individual players and the ball across time,
+- Assign unique IDs and team colors,
+- Provide structured spatial and temporal context to the Vision-Language Model (VLM).
+
+This approach enables the VLM to focus attention on relevant actors and motions, improving both action classification and description generation.
+
+📂 Code for tracking can be found in:
+	•	src/tracking/ (modular pipeline adapted from Roboflow)
+	•	scripts/player_tracking.py (runs detection and tracking on video clips)
 
 ### 3. Action Description (VLM)
 
