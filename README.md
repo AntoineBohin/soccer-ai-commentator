@@ -16,7 +16,19 @@ The pipeline consists of 5 main components, described below. \\
 ![Project Pipeline](./img/pipeline.png)
 
 ### Soccer Data
-We used **SoccerNet v2**, a public benchmark dataset for soccer video understanding.
+We used **SoccerNet v2**, a public benchmark dataset for soccer video understanding. This dataset served as the foundation for training and evaluating our models — particularly the Action Spotting and Tracking modules — while ensuring comparability with state-of-the-art approaches.
+
+Key features:
+- 550+ full matches (~764 hours) from 6 major European leagues
+- Over 110,000 annotated events across 17 action classes (e.g., goal, foul, card, substitution, corner…)
+- Videos available in 720p and 224p, with frame-level annotations and timestamps
+- Fully accessible via the official Python API
+
+Why [SoccerNet](https://www.soccer-net.org)?
+- Recognized as the benchmark dataset in Computer Vision applied to Soccer
+- Hosts annual international challenges (CVPR, ECCV…) on tasks like Action Spotting, Replay Grounding, Multi-View Detection, etc.
+- Strong academic relevance: +5 Best Paper Awards (CVPR, ECCV), +60 published methods for Action Spotting
+- Practical applications: Performance analysis, TV broadcasting, scouting, VAR augmentation
 
 ### 1. Action Spotting
 We selected an open-source model from the 2023 SoccerNet Action Spotting Challenge, originally developed by [Ruslan Baikulov (original github)](https://github.com/lRomul/ball-action-spotting). This model (that has become the standard baseline for SoccerNet 2024 Action Spotting challenge) belongs to a class of hybrid and lightweight Action Spotting architectures, offering a solid compromise between performance, robustness, and efficiency. Its design makes it particularly well-suited for deployment on modest GPUs, a crucial criterion for scalable and accessible solutions.
