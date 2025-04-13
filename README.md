@@ -97,8 +97,8 @@ Key features of our setup:
 - Low inference time: The full generation process is typically under 10 seconds per clip on a standard GPU.
 You can test Zonos and tune voice parameters on their playground: [https://github.com/roboflow/sports/tree/main](https://playground.zyphra.com/audio)
 
-
 ## Quick Setup and Start
+
 
 ## Contributors
 - Antoine Bohin (CentraleSupélec) antoine.bohin@student-cs.fr
