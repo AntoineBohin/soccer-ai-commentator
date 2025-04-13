@@ -98,7 +98,31 @@ Key features of our setup:
 You can test Zonos and tune voice parameters on their playground: [https://github.com/roboflow/sports/tree/main](https://playground.zyphra.com/audio)
 
 ## Quick Setup and Start
+### Requirements
+Install the requirements `pip install -r requirements.txt`.
+To run the pipeline with current parameters, you'll need a GPU with 24GB VRAM minimum. If you use a more powerful GPU, you can increase the VLM parameters (fps and max_resolution) within the `src/vlm/vlm_utils.py` file. 
 
+### Download data and VLM model
+If you want to test the data on SoccerNet games, please see SoccerNet website (data protected by a NDA you'll need to sign at this [link](https://docs.google.com/forms/d/e/1FAIpQLSfYFqjZNm4IgwGnyJXDPk2Ko_lZcbVtYX73w5lf6din5nxfmA/viewform).
+You also need to execute `download_vlm_weights.py` to download Qwen2.5-VL weights.
+
+### Prepare the video and Run the pipeline
+To use the pipeline on your chosen video, you'll need to follow the following steps:
+1. Create a new folder in the `data/soccernet/action-spotting-2023` with the name of your match.
+2. Add your video (720p is best) converted to .mkv format in this folder. If you want to analyze a full match (2 halves), you'll need to divide the match into two distinct videos with the name `{half}_720p.mkv`.
+3. Change the halves parameter at the bottom of the `src/constants.py` file to 1 or 2 depending on the number of extracts you would like to process.
+4. Execute the command `python3 app.py` that will launch the Gradio interface.
+5. Within the interface, you can select your target folder (and video). If it is the first time you process the video, select all pipeline steps. Once fully processed, you can unselect some/all of the steps to navigate within the commented clips.
+
+### Closer look at the results
+The results of each step of the pipeline are saved throughout the process:
+1a. Action Spotting results: `data/app_test/action/{your_video}/results_spotting.json`
+1b. Raw Clips (key actions): `data/app_test/action/{your_video}/clips`. All path/label associations are saved in `data/app_test/action/{your_video}/cache/original_clips.pkl`
+2. Tracking Clips: `data/app_test/action/{your_video}/clips_tracked`
+3. Action Descriptions: `data/app_test/action/{your_video}/cache/descriptions.pkl`
+4. Textual Commentary: `data/app_test/action/{your_video}/cache/commentary.pkl`
+5. Audio Commentary: `data/app_test/action/{your_video}/clips_tracked/commentary/`
+6. Final Commented Clips: `data/app_test/action/{your_video}/clips_commented/`
 
 ## Contributors
 - Antoine Bohin (CentraleSupélec) antoine.bohin@student-cs.fr
