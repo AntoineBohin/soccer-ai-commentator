@@ -91,7 +91,7 @@ The LLM receives a structured prompt that helps:
 The final step of our pipeline transforms textual descriptions into natural, expressive audio commentary, simulating a real sports broadcast experience.
 We use Zonos, a Text-to-Speech model from the Coqui-TTS framework, selected for its open-source nature, fast inference, and advanced control over style and emotion. It allows us to specify voice tone parameters dynamically, making it especially suited for sports applications.
 Key features of our setup:
-- Voice cloning: We use real audio samples of Peter Drury, a renowned sports commentator, to synthesize voice with high fidelity and recognizable tone.
+- Voice cloning: We use real audio samples of Peter Drury, a renowned sports commentator, to synthesize voice with high fidelity and recognizable tone. The model only requires a 15s-30s long sample from the voice to synthetize, that you can add to the `data/MP3/input` folder.
 - Emotion embeddings: We encode emotions like happiness, excitement, or neutrality as a vector and pass it to the TTS model to modulate the speaking style.
 - Context-aware style: Two different voice inputs and sets of emotion parameters are used based on the action type: High-emotion voice for impactful actions (e.g. goals, penalties) vs. Neutral tone for routine actions (e.g. throw-ins, substitutions).
 - Low inference time: The full generation process is typically under 10 seconds per clip on a standard GPU.
