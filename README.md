@@ -108,8 +108,8 @@ You also need to execute `download_vlm_weights.py` to download Qwen2.5-VL weight
 
 ### Prepare the video and Run the pipeline
 To use the pipeline on your chosen video, you'll need to follow the following steps:
-- 1. Create a new folder in the `data/soccernet/action-spotting-2023` with the name of your match.
-- 2. Add your video (720p is best) converted to .mkv format in this folder. If you want to analyze a full match (2 halves), you'll need to divide the match into two distinct videos with the name `{half}_720p.mkv`.
+1. Create a new folder in the `data/soccernet/action-spotting-2023` with the name of your match.
+2. 2. Add your video (720p is best) converted to .mkv format in this folder. If you want to analyze a full match (2 halves), you'll need to divide the match into two distinct videos with the name `{half}_720p.mkv`.
 3. Change the halves parameter at the bottom of the `src/constants.py` file to 1 or 2 depending on the number of extracts you would like to process.
 4. Execute the command `python3 app.py` that will launch the Gradio interface.
 5. Within the interface, you can select your target folder (and video). If it is the first time you process the video, select all pipeline steps. Once fully processed, you can unselect some/all of the steps to navigate within the commented clips.
