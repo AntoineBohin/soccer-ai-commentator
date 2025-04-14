@@ -95,7 +95,7 @@ Key features of our setup:
 - Emotion embeddings: We encode emotions like happiness, excitement, or neutrality as a vector and pass it to the TTS model to modulate the speaking style.
 - Context-aware style: Two different voice inputs and sets of emotion parameters are used based on the action type: High-emotion voice for impactful actions (e.g. goals, penalties) vs. Neutral tone for routine actions (e.g. throw-ins, substitutions).
 - Low inference time: The full generation process is typically under 10 seconds per clip on a standard GPU.
-You can test Zonos and tune voice parameters on their playground: [https://github.com/roboflow/sports/tree/main](https://playground.zyphra.com/audio)
+You can test Zonos and tune voice parameters on their playground: [Playground Zyphra Zonos](https://playground.zyphra.com/audio)
 
 ## Quick Setup and Start
 ### Requirements
