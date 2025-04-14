@@ -124,7 +124,7 @@ The results of each step of the pipeline are saved throughout the process:
 6. Final Commented Clips: `data/app_test/action/{your_video}/clips_commented/`
 
 ## Contributors
-- Antoine Bohin (CentraleSupélec) antoine.bohin@student-cs.fr
+- Antoine Bohin (CentraleSupélec / MVA) antoine.bohin@student-cs.fr
 - Ilyess Doragh (CentraleSupélec / MVA) ilyess.doragh@student-cs.fr
 - Mathieu Dujardin (CentraleSupélec) mathieu.dujardin@student-cs.fr
 - Logan Renaud (CentraleSupélec / MVA) logan.renaud@student-cs.fr
