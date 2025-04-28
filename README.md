@@ -1,6 +1,6 @@
 # AI-Generation of Soccer Highlights and Audio Commentaries
 
-This project presents an end-to-end AI pipeline for automatically generating natural audio commentary from raw soccer match videos. Combining the latest advances in Computer Vision, Vision-Language Modeling (VLM), Large Language Models (LLM), and Text-to-Speech (TTS), the pipeline detects key actions, describes them chronologically, reformulates them into sports commentary, and synthesizes spoken audio.
+This project presents an end-to-end AI pipeline for automatically generating natural audio commentary from raw soccer match videos. Combining the latest advances in Computer Vision, Vision-Language Modeling (VLM), Large Language Models (LLM), and Text-to-Speech (TTS), the pipeline detects key actions, describes them chronologically, reformulates them into sports commentary, and synthesizes spoken audio. 
 
 ## Context
 
